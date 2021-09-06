@@ -41,7 +41,10 @@ class AnswerRepository implements AnswerRepositoryInterface {
         try {
             $answer = Answer::find($id);
 
-            $answer->delete();
+            if($answer) {
+                $answer->delete();
+            }
+
         } catch (\Throwable $th) {
             throw $th;
             report($th);

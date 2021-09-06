@@ -39,10 +39,10 @@ class QuestionController extends Controller
 
     }
 
-    public function delete(int $id) {
+    public function destroy(int $id) {
         $this->repository->delete($id);
 
-        return response()->json();
+        return response()->json('Question deleted');
     }
 
     public function show(int $id) {

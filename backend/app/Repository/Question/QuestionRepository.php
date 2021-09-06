@@ -36,7 +36,10 @@ class QuestionRepository implements QuestionRepositoryInterface {
         try {
             $question = Question::find($id);
 
-            $question->delete();
+            if($question) {
+                $question->delete();
+            }
+
         } catch (\Throwable $th) {
             throw $th;
             report($th);
