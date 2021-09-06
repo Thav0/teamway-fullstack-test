@@ -8,7 +8,6 @@ use App\Models\Answer;
 
 class AnswerRepository implements AnswerRepositoryInterface {
     public function create(AnswerStoreRequest $request) {
-
         try {
             Answer::create([
                 'answer' => $request->answer,

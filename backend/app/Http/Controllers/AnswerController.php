@@ -22,9 +22,14 @@ class AnswerController extends Controller
     }
 
     public function store(AnswerStoreRequest $request) {
-        $this->repository->create($request);
+        try {
+            $this->repository->create($request);
+    
+            return response()->json(['message' => 'Answer created!'], 201);
+        } catch (\Throwable $th) {
+            return response()->json('Failed to store the answer', 400);
+        }
 
-        return response()->json(['message' => 'Answer created!'], 201);
     }
 
     public function update(AnswerUpdateRequest $request, int $id) {

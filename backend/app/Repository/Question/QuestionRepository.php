@@ -44,12 +44,13 @@ class QuestionRepository implements QuestionRepositoryInterface {
     }
 
     public function getAll() {
-        return Question::all();
+        // eager loading
+        return Question::with('answer')->get();
     }
 
     public function getById(int $id) {
         try {
-            $question = Question::find($id);
+            $question = Question::with('answer')->find($id);
             if (!$question) {
                 return ['message' => 'Any question was found'];
             }
