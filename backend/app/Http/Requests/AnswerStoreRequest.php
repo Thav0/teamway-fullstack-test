@@ -13,7 +13,7 @@ class AnswerStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class AnswerStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'answer' => 'required',
+            'question_id' => 'required',
+            'personality_group_id' => 'required',
         ];
     }
 }

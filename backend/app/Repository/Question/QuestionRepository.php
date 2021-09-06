@@ -4,12 +4,13 @@ namespace App\Repository\Question;
 
 use App\Http\Requests\QuestionStoreRequest;
 use App\Http\Requests\QuestionUpdateRequest;
-use App\Models\QuestionModel;
+use App\Models\Question;
 
 class QuestionRepository implements QuestionRepositoryInterface {
     public function create(QuestionStoreRequest $request) {
+
         try {
-            QuestionModel::create(['question' => $request->question]);
+            Question::create(['question' => $request->question]);
         } catch (\Throwable $th) {
             throw $th;
             report($th);
@@ -18,11 +19,13 @@ class QuestionRepository implements QuestionRepositoryInterface {
 
     public function update(QuestionUpdateRequest $request, int $id) {
         try {
-            $question = QuestionModel::find($id);
+            $question = Question::find($id);
 
             $question->question = $request->question;
 
             $question->save();
+
+            return $question;
         } catch (\Throwable $th) {
             throw $th;
             report($th);
@@ -31,7 +34,7 @@ class QuestionRepository implements QuestionRepositoryInterface {
 
     public function delete(int $id) {
         try {
-            $question = QuestionModel::find($id);
+            $question = Question::find($id);
 
             $question->delete();
         } catch (\Throwable $th) {
@@ -41,12 +44,17 @@ class QuestionRepository implements QuestionRepositoryInterface {
     }
 
     public function getAll() {
-        return QuestionModel::all();
+        return Question::all();
     }
 
     public function getById(int $id) {
         try {
-            return QuestionModel::find($id);
+            $question = Question::find($id);
+            if (!$question) {
+                return ['message' => 'Any question was found'];
+            }
+
+            return $question;
         } catch (\Throwable $th) {
             throw $th;
             report($th);

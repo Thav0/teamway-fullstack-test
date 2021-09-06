@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\PersonalityGroup;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class PersonalityGroupsSeeder extends Seeder
 {
@@ -12,16 +12,16 @@ class PersonalityGroupsSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
-        DB::table('personality_groups')->insert([
-            ['introvert'],
-            ['extrovert']
+    public function run() {
+        PersonalityGroup::truncate();
+
+        PersonalityGroup::insert([
+            ['name' => 'introvert', 'created_at' => now()],
+            ['name' => 'extrovert', 'created_at' => now()],
         ]);
     }
 
-    public function down()
-    {
-        DB::table('personality_groups')->truncate();
+    public function down() {
+        PersonalityGroup::truncate();
     }
 }
