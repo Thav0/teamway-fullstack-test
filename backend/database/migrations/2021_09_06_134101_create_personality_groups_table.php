@@ -16,6 +16,7 @@ class CreatePersonalityGroupsTable extends Migration
         Schema::create('personality_groups', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50);
+            $table->text('message', 1000);
             $table->timestamps();
         });
     }

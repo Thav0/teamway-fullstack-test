@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\QuestionController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\FinishQuizController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::resource('/questions', QuestionController::class);
 Route::resource('/answers', AnswerController::class);
+Route::post('/finish-quiz', [FinishQuizController::class, 'index']);

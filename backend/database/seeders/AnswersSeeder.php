@@ -32,15 +32,15 @@ class AnswersSeeder extends Seeder
             ['answer' => 'I find a lot of topics to talk with a newly met person', 'question_id' => 3, 'personality_group_id' => 2],
             ['answer' => 'It\'s hard for me to find a topic that keeps the conversation going', 'question_id' => 3, 'personality_group_id' => 1],
 
-            ['answer' => 'I agree and I am happy to go to the party 2', 'question_id' => 4, 'personality_group_id' => 2],
-            ['answer' => 'I say I can\'t, "I have other plans" 1', 'question_id' => 4, 'personality_group_id' => 1],
-            ['answer' => 'I refuse to come without giving a reason 1', 'question_id' => 4, 'personality_group_id' => 1],
-            ['answer' => 'I agree and then I pretend that something came up 2', 'question_id' => 4, 'personality_group_id' => 2],
+            ['answer' => 'I agree and I am happy to go to the party', 'question_id' => 4, 'personality_group_id' => 2],
+            ['answer' => 'I say I can\'t, "I have other plans"', 'question_id' => 4, 'personality_group_id' => 1],
+            ['answer' => 'I refuse to come without giving a reason', 'question_id' => 4, 'personality_group_id' => 1],
+            ['answer' => 'I agree and then I pretend that something came up', 'question_id' => 4, 'personality_group_id' => 2],
 
-            ['answer' => 'I like subdued things that fit together 1', 'question_id' => 5, 'personality_group_id' => 1],
-            ['answer' => 'I put on bright clothes 2', 'question_id' => 5, 'personality_group_id' => 2],
-            ['answer' => 'I wear dark clothes and lots of accessories (watch, scarf etc.) 1', 'question_id' => 5, 'personality_group_id' => 2],
-            ['answer' => 'I love colorful clothes and matching jewelry 2', 'question_id' => 5, 'personality_group_id' => 2],
+            ['answer' => 'I like subdued things that fit together', 'question_id' => 5, 'personality_group_id' => 1],
+            ['answer' => 'I put on bright clothes', 'question_id' => 5, 'personality_group_id' => 2],
+            ['answer' => 'I wear dark clothes and lots of accessories (watch, scarf etc.)', 'question_id' => 5, 'personality_group_id' => 2],
+            ['answer' => 'I love colorful clothes and matching jewelry', 'question_id' => 5, 'personality_group_id' => 2],
 
             ['answer' => 'yes?', 'question_id' => 6, 'personality_group_id' => 1],
             ['answer' => 'no?', 'question_id' => 6, 'personality_group_id' => 2],

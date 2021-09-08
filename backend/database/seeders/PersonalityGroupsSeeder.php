@@ -16,8 +16,18 @@ class PersonalityGroupsSeeder extends Seeder
         PersonalityGroup::truncate();
 
         PersonalityGroup::insert([
-            ['name' => 'introvert', 'created_at' => now()],
-            ['name' => 'extrovert', 'created_at' => now()],
+            [
+                'name' => 'introvert',
+                'created_at' => now(),
+                'message' => 'Introvert - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Fusce consectetur tortor vitae tincidunt maximus. Morbi varius ex nisi, quis sagittis leo varius vel.'
+            ],
+            [
+                'name' => 'extrovert',
+                'created_at' => now(),
+                'message' => 'Extrovert - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Fusce consectetur tortor vitae tincidunt maximus. Morbi varius ex nisi, quis sagittis leo varius vel.'
+            ],
         ]);
     }
 
